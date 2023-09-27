@@ -5,8 +5,8 @@
 
 >## Directory Structure
 >
->├── **src**
-├── **.husky**
+```pre├── **src**
+├── .husky
 │   │    ├── pre-commit
 ├── index.ts
 ├── jest.config.json
@@ -16,8 +16,7 @@
 ├── package-lock.json
 ├── README.md
 └── tsconfig.json
-
-
+```
 
 
 package.json
