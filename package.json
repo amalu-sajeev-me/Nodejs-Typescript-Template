@@ -4,6 +4,7 @@
   "description": "only a template repository",
   "main": "./dist/src/index.js",
   "scripts": {
+    "gcommit": "npx ts-node-esm --project tsconfig.esm.json ./bin/cli-tools/git-commit.ts",
     "lint": "eslint",
     "lint:fix": "eslint . --fix --ext .ts",
     "lint-staged": "lint-staged",
@@ -11,7 +12,7 @@
     "test:coverage": "jest --coverage",
     "build": "tsc",
     "start": "npm run build && node --require dotenv/config ./dist/src/index.js",
-    "start:dev": "nodemon --require dotenv/config index.ts",
+    "start:dev": "nodemon --require dotenv/config src/index.ts",
     "prepare": "husky install"
   },
   "repository": {
@@ -28,12 +29,14 @@
   },
   "homepage": "https://github.com/amalu-sajeev-me/Nodejs-Typescript-Template#readme",
   "devDependencies": {
+    "@types/inquirer": "^9.0.4",
     "@types/jest": "^29.5.5",
-    "@types/node": "^20.7.0",
+    "@types/node": "^20.8.4",
     "@typescript-eslint/eslint-plugin": "^6.7.3",
     "@typescript-eslint/parser": "^6.7.3",
     "eslint": "^8.50.0",
-    "husky": "^8.0.3",
+    "husky": "^8.0.0",
+    "inquirer": "^9.2.11",
     "jest": "^29.7.0",
     "lint-staged": "^14.0.1",
     "nodemon": "^3.0.1",
@@ -42,7 +45,8 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
-    "dotenv": "^16.3.1"
+    "dotenv": "^16.3.1",
+    "reflect-metadata": "^0.1.13"
   },
   "type": "module",
   "husky": {
