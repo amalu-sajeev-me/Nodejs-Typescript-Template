@@ -1,1 +1,6 @@
-console.log('hello world');
+
+
+(function main() {
+    //execute your code here..
+    console.log('hello world');
+})();

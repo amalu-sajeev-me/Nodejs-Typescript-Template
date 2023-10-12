@@ -3,6 +3,12 @@
     "module": "ESNext",
     "target": "ESNext",
     "esModuleInterop": true,
-    // ...
-  }
+    "moduleResolution": "Node",
+    "baseUrl": "./",
+    "allowImportingTsExtensions": true,
+    "allowArbitraryExtensions": true,
+    "allowSyntheticDefaultImports": true,
+    "rootDir": "./",
+  },
+  "include": ["bin/**/*", "src/**/*.ts"]
 }
