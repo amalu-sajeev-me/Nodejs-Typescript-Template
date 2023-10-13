@@ -1,7 +1,7 @@
 import { z } from 'zod';
 import { envSchema } from './env.schema.ts';
 import { container } from 'tsyringe';
-import { PinoLoggerAdapter } from 'src/adapters/pino-logger.adapter.ts';
+import { PinoLoggerAdapter } from '../../src/adapters/pino-logger.adapter.ts';
 
 class EnvValidator{
     private static scream = container.resolve(PinoLoggerAdapter);
@@ -10,16 +10,17 @@ class EnvValidator{
 
     public static validatedEnvObj: z.infer<typeof envSchema> | null = null;
 
-    public static validate() {
+    public static validate = () => {
         try {
             const data = this.ENV_SCHEMA.parse(process.env);
             this.validatedEnvObj = data;
             this.scream.info('environment variables validated succesfully', 'EnvValidator.ts');
+            return true;
         } catch (error) {
             this.scream.error('Error in validating the environment variables');
             throw error;
         }
-    }
+    };
 }
 
 export const envProxy = new Proxy(EnvValidator, {
