@@ -11,5 +11,8 @@
     "allowSyntheticDefaultImports": true,
     "rootDir": "./",
   },
-  "include": ["bin/**/*", "src/**/*.ts"]
+  "include": [
+    "bin/**/*.ts",
+    "src/**/*.ts"
+  ]
 }
