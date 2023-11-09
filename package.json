@@ -1,7 +1,7 @@
 {
   "name": "Nodejs-TypeScript-Template",
   "version": "1.0.0",
-  "description": "only a template repository",
+  "description": "only a template repository for nodejs backend project",
   "main": "./dist/src/index.js",
   "scripts": {
     "gcommit": "npx ts-node-esm --project tsconfig.esm.json ./bin/cli-tools/git-commit.ts",
